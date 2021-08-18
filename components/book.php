@@ -15,4 +15,3 @@ if($json != null)
 }
 
 $result = $booking_service->writeRecord($json);
-?>

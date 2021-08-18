@@ -12,4 +12,3 @@ $month = $data["Month"];
 $result = $booking_service->fetchRecordedDays($year, $month);
 
 echo $result;
-?>
