@@ -1,0 +1,62 @@
+  .app {
+      background-color: darkgray;
+      font-family: 'Roboto';
+  }
+
+  #app-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #app-info {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #table-button-group {
+    padding-left: 40px;
+  }
+
+  #booking-table-row {
+    padding-top: 10px;
+  }
+ 
+  table td:hover {
+    background-color: rgba(0,0,0,.075);
+  }
+
+  table.table-bordered {
+    border:1px solid black;
+    margin-top:20px;
+  }
+
+  table.table-bordered > thead > tr > th {
+    border:1px solid black;
+  }
+
+  table.table-bordered > tbody > tr > td {
+    border:1px solid black;
+  }
+ 
+  .box {
+    position: relative;
+    margin-left: 20px;
+    padding-left: 5px;
+  }
+  
+  .box:before{
+    position: absolute;
+    left: -20px;
+    content: "";
+    height:20px;
+    width:20px;
+    margin-bottom:15px;
+    }
+  
+  .box.red:before{
+    background-color:red;
+  }
+  
+  .box.green:before{
+    background-color:green;
+  }
