@@ -10,6 +10,12 @@ class Booking
 
     function fetchRecordedDays($y, $m)
     {
+        // If theres no 'database', create empty one.
+        if(!is_file($this->path))
+        {
+            file_put_contents($this->path, "[]");
+        }
+
         $content = file_get_contents($this->path);
         $this->data = json_decode($content, true);
 
