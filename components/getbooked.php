@@ -5,6 +5,7 @@ include_once("../booking.php");
 $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 
+// TO-DO: Validation
 
 $year = $data["Year"];
 $month = $data["Month"];

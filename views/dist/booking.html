@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- App Title Index.php -->
-        <title></title>
+        <title>Booking App</title>
         <!-- Bootstrap CSS & JS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
@@ -14,21 +14,7 @@
         crossorigin="anonymous"></script>
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <!-- Roboto Font -->
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-        </style>
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="views/styles.css">
-        <!-- Custom JS -->
-        <script src="views/requests.js"></script>
-        <script src="views/booking.js"></script>
-        <script>            
-            let year = getCurrentYear();
-            let month = getCurrentMonth();
-            getBookedRequest(year, month);
-        </script>
-    </head>
+    <script defer src="./views/dist/main.js"></script><link href="./views/dist/main.css" rel="stylesheet"></head>
     <body class="app">
     <div id="app-container" class="container-fluid">
         <div id="app-title" class="row justify-content-center">
@@ -47,7 +33,7 @@
         </div>
         <div id="booking-date" class="row justify-content-center">
             <div class="col-md-auto d-flex justify-content-center">
-                <p class="h2"><script>document.write(getBookingTitle());</script></p>
+                <p id="booking-title" class="h2">Booking Title</p>
             </div>
         </div>
         <div id="booking-table" class="container d-flex justify-content-center">
@@ -56,20 +42,16 @@
             <table class="table table-responsive table-secondary table-bordered">
             <thead>
                 <tr id="booking-table-headers">
-                    <!-- To-do: Move to JS files -->
-                    <script>
-                        renderHeaders();
-                    </script>
+                    <!-- {TABLE HEADERS} -->
                 </tr>
             </thead>
             <tbody id="booking-table-body">
-                <!-- TABLE -->
-                <!-- ENDTABLE -->
+                <!-- {TABLE CONTENT} -->
             </tbody>
             </table>
             </div>
             <div id="table-button-group" class="col-md-auto">
-                <button type="button" onclick="book()" class="btn btn-success">Забронировать</button>
+                <button type="button" onclick="booking.Book()" class="btn btn-success">Забронировать</button>
             </div>
             </div>
         </div>

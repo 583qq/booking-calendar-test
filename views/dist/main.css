@@ -1,5 +1,10 @@
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-
+/*!********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./views/styles.css ***!
+  \********************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap);
+/*!************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./views/styles.css (1) ***!
+  \************************************************************************/
   .app {
       background-color: darkgray;
       font-family: 'Roboto';

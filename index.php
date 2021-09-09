@@ -19,10 +19,7 @@ class Application
 
 $app = new Application("Booking App", "Виталий Моисеенко");
 
-echo '<title>' . $app->title . '</title>';
+$app->render_page(__DIR__ . '/views/dist/booking.html');
 
-$app->render_page(__DIR__ . '/views/booking.html');
-
-echo "<center>Creator: " . $app->author;
 
 ?>

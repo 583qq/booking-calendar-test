@@ -1,7 +1,7 @@
 const components_url = "../components/";
 
 
-function getBookedRequest(year, month)
+export function GetBookedRequest(booking, year, month)
 {
   const component = "getbooked.php"
 
@@ -17,30 +17,32 @@ function getBookedRequest(year, month)
     })
     .done(function (data) 
     {
-      adoptReserved(data);
-      renderBooking(month, year);
+      AdoptBooked(booking, data);
+      booking.Render();
     });
 }
 
-function adoptReserved(arr)
+function AdoptBooked(booking, arr)
 {
-  console.log("Got reserved arrays: " + arr);
+  console.log("Got booked arrays: " + arr);
 
   if(arr == null)
   {
-    console.log("Theres no reservations.");
+    console.log("Theres no booked days.");
     return;
   }
     
   for(let i = 0; i < arr.length; i++)
     for(let j = 0; j < arr[i].length; j++)
-      booking.reserved.push(arr[i][j]);
+    {
+      booking.reserved.push(new Date(arr[i][j]));
+    }
 }
 
-function sendBookedRequest(year, month, days)
+export function SendBookedRequest(booking, year, month, days)
 {
   // If we have nothing selected
-  if(days.length === 0)
+  if(booking.selected.length === 0)
     return false;
 
   const component = "book.php";
@@ -54,9 +56,9 @@ function sendBookedRequest(year, month, days)
       contentType: "application/json; charset=utf-8",
       dataType: "json"
   }).done(function (data) {
-    announceResult(true);
+    booking.ChangeResultField(true);
   }).fail(function (data) {
-    announceResult(false);
+    booking.ChangeResultField(false);
   });
 
 }

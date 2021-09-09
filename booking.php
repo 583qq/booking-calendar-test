@@ -30,7 +30,7 @@ class Booking
         return $result = json_encode($result);
     }
 
-    function writeRecord($json)
+    function writeRecord($obj)
     {
         $content = file_get_contents($this->path);
         
@@ -39,13 +39,11 @@ class Booking
         else
             $content = json_decode($content);
 
-        $decoded = json_decode($json);
+        array_push($content, $obj);
 
-        array_push($content, $decoded);
+        $json = json_encode($content);
 
-        $json_data = json_encode($content);
-
-        file_put_contents($this->path, $json_data);
+        file_put_contents($this->path, $json);
     }
 }
 
