@@ -149,10 +149,8 @@ export default class Booking
 
     IsDayActive(day)
     {
-        let date = day;
-
-        let month = date.getMonth();
-        let year = date.getFullYear();
+        let month = day.getMonth();
+        let year = day.getFullYear();
 
         if(this.year != year || this.month != month)
             return false;
@@ -196,7 +194,7 @@ export default class Booking
 
     Book()
     {
-        SendBookedRequest(this, this.year, this.month, this.selected);
+        SendBookedRequest(this);
 
         console.log("It was sended (MAYBE).");
 

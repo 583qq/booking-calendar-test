@@ -12,12 +12,15 @@ function OnPageLoad()
 
     booking = new Booking(year, month);
 
-    GetBookedRequest(booking, year, month);
+    GetBookedRequest(booking);
 
     console.log("POST request to get reserved days sent.");
+
+   // booking.Render();
 }
 
 
 OnPageLoad();
 
 window.booking = booking;
+

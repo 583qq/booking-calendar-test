@@ -1,11 +1,14 @@
 const components_url = "../components/";
 
 
-export function GetBookedRequest(booking, year, month)
+export function GetBookedRequest(booking)
 {
   const component = "getbooked.php"
 
   let reserved_json;
+
+  let year = booking.year;
+  let month = booking.month;
 
   $.ajax(
     { 
@@ -39,13 +42,17 @@ function AdoptBooked(booking, arr)
     }
 }
 
-export function SendBookedRequest(booking, year, month, days)
+export function SendBookedRequest(booking)
 {
   // If we have nothing selected
   if(booking.selected.length === 0)
     return false;
 
   const component = "book.php";
+
+  let year = booking.year;
+  let month = booking.month;
+  let days = booking.selected;
 
   console.log("SENDING: " + JSON.stringify({ Year: year, Month: month, Days: days }));
 
